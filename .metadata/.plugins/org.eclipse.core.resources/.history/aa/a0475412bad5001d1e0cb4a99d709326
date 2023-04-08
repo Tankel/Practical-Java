@@ -1,0 +1,5 @@
+package com.course.practicaljava.api.server;
+
+public class DefaultRestApi {
+
+}
