@@ -1,0 +1,31 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.10'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.pixeltrice'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'co.elastic.clients:elasticsearch-java:8.3.2'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-elasticsearch', version: '2.7.1'
+    //implementation 'org.elasticsearch.client:elasticsearch-rest-high-level-client:7.17.4'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'
+    implementation group: 'org.springframework.data', name: 'spring-data-elasticsearch', version: '5.0.4' 
+	//implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation group: 'jakarta.json', name: 'jakarta.json-api', version: '2.1.1'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
